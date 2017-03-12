@@ -13,7 +13,9 @@ def luxuria(bot, update):
     testo = update.message.text.lower()
     print(update.message)
     if (testo.find("luxuria") != -1):
-        update.message.reply_photo(photo=open('images/vlad_1.jpg', 'rb'),quote=False)
+        photo_ = open('images/vlad_1.jpg', 'rb')
+        print(photo_)
+        update.message.reply_photo(photo_,quote=False)
 
 def rispostaFoto(bot, update):
     print(update.message)
