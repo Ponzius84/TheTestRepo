@@ -11,7 +11,7 @@ def milanese(bot, update):
     if (testo.find("milanese")!=-1):
         update.message.reply_text('{}, Va a ciapà i ratt'.format(update.message.from_user.first_name),quote=False)
     elif (testo.find("luxuria") != -1):
-        update.message.reply_photo(photo=open('images/vlad_1.jpg', 'rb'),quote=False)
+        update.message.reply_photo(photo=open('images/vlad_{}.jpg'.format(randint(1, 6)), 'rb'),quote=False)
 
 def rispostaFoto(bot, update):
     print(update.message)
