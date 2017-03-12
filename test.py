@@ -9,6 +9,12 @@ def milanese(bot, update):
     if (testo.find("milanese")!=-1):
         update.message.reply_text('{}, Va a ciapà i ratt'.format(update.message.from_user.first_name),quote=False)
 
+def luxuria(bot, update):
+    testo = update.message.text.lower()
+    print(update.message)
+    if (testo.find("luxuria") != -1):
+        update.message.reply_photo(photo=open('images/vlad_1.jpg', 'rb'),quote=False)
+
 def rispostaFoto(bot, update):
     print(update.message)
     n = randint(0, 9)
@@ -16,6 +22,8 @@ def rispostaFoto(bot, update):
     if (n == 0):
         print("si smessaggia")
         update.message.reply_text('Ue Avete finito o no, di postare foto come checche isteriche?',quote=False)
+
+
 
 
 TOKEN = "344707079:AAHSu8N5ibfJTsougIE-9-4UeTVZZ9DSWuM"
@@ -26,6 +34,7 @@ dp = updater.dispatcher
 
 #Handles
 dp.add_handler(MessageHandler(Filters.text,milanese))
+dp.add_handler(MessageHandler(Filters.text,luxuria))
 dp.add_handler(MessageHandler(Filters.photo,rispostaFoto))
 
 updater.start_webhook(listen="0.0.0.0",
