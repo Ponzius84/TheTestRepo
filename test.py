@@ -12,7 +12,7 @@ def rispostaFoto(bot, update):
         update.message.reply_text('hai rotto la minchia')
 
 
-TOKEN = "316984208:AAEf54aBCLMZMza1EEyEPwstBoyfimvu_vU"
+TOKEN = "344707079:AAHSu8N5ibfJTsougIE-9-4UeTVZZ9DSWuM"
 PORT = int(os.environ.get('PORT', '5000'))
 updater = Updater(TOKEN)
 # add handle
@@ -24,5 +24,5 @@ dp.add_handler(MessageHandler(Filters.photo,rispostaFoto))
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=TOKEN)
-updater.bot.setWebhook("https://quiet-sea-43531.herokuapp.com/" + TOKEN)
+updater.bot.setWebhook("https://milanese-bot.herokuapp.com/" + TOKEN)
 updater.idle()
