@@ -14,7 +14,8 @@ def rispostaFoto(bot, update):
     n = randint(0, 9)
     print(n)
     if (n == 0):
-        update.message.reply_text('Ue Avete finito o no, di postare foto come checche isteriche?',quote=false)
+        print("si smessaggia")
+        update.message.reply_text('Ue Avete finito o no, di postare foto come checche isteriche?',quote=False)
 
 
 TOKEN = "344707079:AAHSu8N5ibfJTsougIE-9-4UeTVZZ9DSWuM"
