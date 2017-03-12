@@ -5,6 +5,8 @@ from random import randint
 
 def milanese(bot, update):
     testo = update.message.text.lower()
+    print(testo)
+    print(update.message.text.from_user)
     if (testo.find("milanese")!=-1):
         update.message.reply_text('{}, Va a ciapà i ratt'.format(update.message.text.from_user),quote=False)
 
