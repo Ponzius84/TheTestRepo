@@ -11,7 +11,7 @@ def milanese(bot, update):
 
 def luxuria(bot, update):
     testo = update.message.text.lower()
-    os.listdir('.')
+    print(os.listdir('.'))
     if (testo.find("luxuria") != -1):
         photo_ = open('images/vlad_1.jpg', 'rb')
         print(photo_)
