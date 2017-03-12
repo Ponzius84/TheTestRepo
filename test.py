@@ -5,14 +5,15 @@ from random import randint
 
 def milanese(bot, update):
     testo = update.message.text.lower()
-    print(testo)
     print(update.message)
-    print(update.message.from_user)
     if (testo.find("milanese")!=-1):
         update.message.reply_text('{}, Va a ciapà i ratt'.format(update.message.from_user.first_name),quote=False)
 
 def rispostaFoto(bot, update):
-    if (randint(0, 9) == 0):
+    print(update.message)
+    n = randint(0, 9)
+    print(n)
+    if (n == 0):
         update.message.reply_text('Ue Avete finito o no, di postare foto come checche isteriche?',quote=false)
 
 
