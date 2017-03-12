@@ -6,16 +6,12 @@ from random import randint
 def milanese(bot, update):
     testo = update.message.text.lower()
     print(update.message)
+    print(os.listdir('.'))
+
     if (testo.find("milanese")!=-1):
         update.message.reply_text('{}, Va a ciapà i ratt'.format(update.message.from_user.first_name),quote=False)
-
-def luxuria(bot, update):
-    testo = update.message.text.lower()
-    print(os.listdir('.'))
-    if (testo.find("luxuria") != -1):
-        photo_ = open('images/vlad_1.jpg', 'rb')
-        print(photo_)
-        update.message.reply_photo(photo_,quote=False)
+    elif (testo.find("luxuria") != -1):
+        update.message.reply_photo(photo=open('images/vlad_1.jpg', 'rb'),quote=False)
 
 def rispostaFoto(bot, update):
     print(update.message)
@@ -36,7 +32,6 @@ dp = updater.dispatcher
 
 #Handles
 dp.add_handler(MessageHandler(Filters.text,milanese))
-dp.add_handler(MessageHandler(Filters.text,luxuria))
 dp.add_handler(MessageHandler(Filters.photo,rispostaFoto))
 
 updater.start_webhook(listen="0.0.0.0",
