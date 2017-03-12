@@ -6,9 +6,10 @@ from random import randint
 def milanese(bot, update):
     testo = update.message.text.lower()
     print(testo)
+    print(update.message)
     print(update.message.from_user)
     if (testo.find("milanese")!=-1):
-        update.message.reply_text('{}, Va a ciapà i ratt'.format(update.message.from_user),quote=False)
+        update.message.reply_text('{}, Va a ciapà i ratt'.format(update.message.from_user.first_name),quote=False)
 
 def rispostaFoto(bot, update):
     if (randint(0, 9) == 0):
