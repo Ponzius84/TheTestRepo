@@ -23,7 +23,8 @@ def domanda(testo, update):
         update.message.reply_text('{}, {}'.format(update.message.from_user.first_name, choice(risposte)), quote=False)
 
 def melina(testo, update):
-    usare_personalizzate = (randint(1, 3) == 1)
+    usare_personalizzate = (randint(1, 2) == 1)
+    print(usare_personalizzate)
     risposte_personalizzate = {'yle' : ['Yle, ti bastano un kg di pucce di Rodolfo?'],
                                'misia' : ['Misia, anche se donna basta che me la porti'],
                                'alessia' : ['Alessia, vieni che ti tiro quel pelo lungo sul braccio',
@@ -35,8 +36,8 @@ def melina(testo, update):
                             "Quest' inverno mi sono morte due galline di freddo. Sono andata per prendere le uova e le ho trovate stecchite"]
 
     if "melina" in testo:
-        if (usare_personalizzate and any(nome in testo for nome in ['yle','alessia','misia'])):
-            update.message.reply_text('{}'.format(choice(risposte_personalizzate[update.message.from_user.first_name])), quote=False)
+        if (usare_personalizzate and any(nome in update.message.from_user.first_name.lower() for nome in ['yle','alessia','misia'])):
+            update.message.reply_text('{}'.format(choice(risposte_personalizzate[update.message.from_user.first_name.lower()])), quote=False)
         else:
             update.message.reply_text('{}'.format(choice(risposte_generiche)), quote=False)
 
