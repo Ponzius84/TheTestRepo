@@ -18,8 +18,19 @@ def domanda(testo, update):
         update.message.reply_text('{}, {}'.format(update.message.from_user.first_name, choice(risposte)), quote=False)
 
 def melina(testo, update):
-    risposte = ['Si lavora e si fatica per la panza e per la fica']
+    risposte = ['Si lavora e si fatica per la panza e per la fica',
+		'lampu!',
+		'lampu cu li furmina!']
     if testo.find("melina") != -1:
+        update.message.reply_text('{}'.format(choice(risposte)), quote=False)
+
+def invidia(testo, update):
+    triggers = ['invidia',
+              	'invidios']
+
+    risposte = ["A cinca sta malanga, l' anni cu se chianga",
+		'Pisaturi in culo, suttu nu fucalire chino de ragnatile']
+    if any(s in testo for s in saluti):
         update.message.reply_text('{}'.format(choice(risposte)), quote=False)
 
 def saluto(testo, update):
@@ -41,7 +52,8 @@ def rispostaTesto(bot, update):
                                 luxuria,
                                 domanda,
                                 melina,
-                                saluto]]
+                                saluto,
+				invidia]]
 
 
 
