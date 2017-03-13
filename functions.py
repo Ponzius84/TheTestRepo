@@ -30,7 +30,7 @@ def invidia(testo, update):
 
     risposte = ["A cinca sta malanga, l' anni cu se chianga",
 		'Pisaturi in culo, suttu nu fucalire chino de ragnatile']
-    if any(s in testo for s in saluti):
+    if any(s in testo for s in triggers):
         update.message.reply_text('{}'.format(choice(risposte)), quote=False)
 
 def saluto(testo, update):
@@ -42,8 +42,6 @@ def saluto(testo, update):
     risposte = ['we figa','we alura?']
     if any(s in testo for s in saluti):
         update.message.reply_text('{}'.format(choice(risposte)), quote=False)
-
-#-----------------------------------------------------------------------------------------------------------------------
 
 def rispostaTesto(bot, update):
     testo = update.message.text.lower()
