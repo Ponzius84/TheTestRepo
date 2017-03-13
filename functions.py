@@ -37,7 +37,11 @@ def saluto(testo, update):
 def rispostaTesto(bot, update):
     testo = update.message.text.lower()
     print(update.message)
-    [f(testo, update) for f in [milanese, luxuria, domanda, melina, saluto]]
+    [f(testo, update) for f in [milanese,
+                                luxuria,
+                                domanda,
+                                melina,
+                                saluto]]
 
 
 

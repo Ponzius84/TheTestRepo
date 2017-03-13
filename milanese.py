@@ -1,4 +1,4 @@
-# !/usr/bin/env python
+#!/usr/bin/env python
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
 from functions import rispostaTesto, rispostaFoto
@@ -16,5 +16,8 @@ dp.add_handler(MessageHandler(Filters.photo,rispostaFoto))
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=TOKEN)
-updater.bot.setWebhook("https://rispostaTesto-bot.herokuapp.com/" + TOKEN)
+updater.bot.setWebhook("https://milanese-bot.herokuapp.com/" + TOKEN)
 updater.idle()
+
+
+
