@@ -5,7 +5,7 @@ from  chat_information import ChatInfo
 class Parser(object):
 
     chats = {}
-    richiesta = 0
+
 
     def rispostaTesto(self, bot, update):
 
@@ -101,12 +101,13 @@ class Parser(object):
             update.message.reply_text('{}'.format(choice(risposte)), quote=False)
 
     def richiesta_imbruttita(self, testo, update):
-        if (self.chats[update.message.chat_id].richiesta_imbruttita_in_atto):
-            if (update.message.from_user.first_name in self.richiesta.malcapitato):
-                self.richiesta.process_next_step(self.chats[update.message.chat_id], testo, update)
+        chat = self.chats[update.message.chat_id]
+        if (chat.richiesta_imbruttita_in_atto):
+            if (update.message.from_user.first_name in chat.richiesta_imbruttita.malcapitato):
+                chat.richiesta_imbruttita.process_next_step(chat, testo, update)
 
-        elif (randint(1, 30) == 1) and (self.chats[update.message.chat_id].richiesta_imbruttita_in_atto == False):
+        elif (randint(1, 30) == 1) and (chat.richiesta_imbruttita_in_atto == False):
             print("generazione nuova richiesta imbruttita")
-            self.richiesta = generate_request(update.message.from_user.first_name)
-            self.chats[update.message.chat_id].richiesta_imbruttita_in_atto = True
-            self.richiesta.process_next_step(self.chats[update.message.chat_id], testo, update)
+            chat.richiesta_imbruttita = generate_request(update.message.from_user.first_name)
+            chat.richiesta_imbruttita_in_atto = True
+            chat.richiesta_imbruttita.process_next_step(chat, testo, update)
