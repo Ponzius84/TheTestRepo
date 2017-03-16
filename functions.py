@@ -39,8 +39,13 @@ class Parser(object):
     # -----------------------------------------------------------------------------------------------------------------------
 
     def milanese(self, testo, update):
+        risposte = ['Va a ciapà i ratt',
+		"La buca l'è minga straca se la sa nò de vaca",
+		"Faa una pisada senza un pett l'è com a sunà ul viulin senza l'archett",
+		"I danè fan danà,ma aveghi no fan crepà!",
+		"fa bala' l'öuch!"]
         if "milanese" in testo:
-            update.message.reply_text('{}, Va a ciapà i ratt'.format(update.message.from_user.first_name),
+            update.message.reply_text('{}, {}'.format(update.message.from_user.first_name, choice(risposte)),
                                       quote=False)
 
     def luxuria(self, testo, update):
